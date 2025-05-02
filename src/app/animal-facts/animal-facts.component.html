@@ -1,0 +1,13 @@
+<div class="container">
+  <!-- Botão para buscar curiosidades sobre gatos -->
+  <form (submit)="buscarCuriosidade()">
+    <h2>Curiosidades sobre os felinos</h2>
+    <button type="submit">Ver uma curiosidade</button>
+  </form>
+
+  <!-- Painel de Resposta -->
+  <div class="response-panel" *ngIf="_curiosidade">
+    <h3>Você sabia?</h3>
+    <p>{{ _curiosidade }}</p>
+  </div>
+</div>

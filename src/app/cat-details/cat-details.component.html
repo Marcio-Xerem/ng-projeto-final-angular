@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- Formulário para buscar detalhes do Gato -->
+  <form (submit)="buscarDadosCat()">
+    <h2>Buscar detalhes do Gato...</h2>
+    <input type="text" name="txtCatId" id="txtCatId" [(ngModel)]="catId" placeholder="Digite o nome da raça" required />
+    <button type="submit">Buscar</button>
+  </form>
+
+  <!-- Painel de Resposta -->
+  <div class="response-panel" *ngIf="catDetails">
+    <h3>Detalhes do Gato:</h3>
+    <p><strong>Nome:</strong> {{ catDetails.name }}</p>
+    <p><strong>Temperamento:</strong> {{ catDetails.temperament }}</p>
+    <p><strong>Origem:</strong> {{ catDetails.origin || 'Não disponível' }}</p>
+    <p><strong>Descrição:</strong> {{ catDetails.description || 'Descrição não disponível' }}</p>
+
+    <!-- Figura com imagem do gato -->
+    <figure *ngIf="catDetails.image?.url">
+      <img [src]="catDetails.image?.url" alt="{{ catDetails.name }}" />
+      <figcaption *ngIf="catDetails.name">Foto de um {{ catDetails.name }}</figcaption>
+    </figure>
+  </div>
+</div>

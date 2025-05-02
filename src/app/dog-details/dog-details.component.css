@@ -1,0 +1,13 @@
+@import '../app.component.css';
+
+.response-panel {
+  background-color: #fae1dd;
+}
+
+button {
+  background-color: #e74c3c;
+}
+
+button:hover {
+  background-color: #c0392b;
+}

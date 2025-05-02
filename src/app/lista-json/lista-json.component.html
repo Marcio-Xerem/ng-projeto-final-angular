@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Raças de Cães</h2>
+  <button (click)="buscarDogBreeds()">Carregar Raças de Cães</button>
+  <ul *ngIf="dogBreeds.length > 0">
+    <li *ngFor="let dog of dogBreeds">{{ dog.name }}</li>
+  </ul>
+
+  <h2>Raças de Gatos</h2>
+  <button (click)="buscarCatBreeds()">Carregar Raças de Gatos</button>
+  <ul *ngIf="catBreeds.length > 0">
+    <li *ngFor="let cat of catBreeds">{{ cat.name }}</li>
+  </ul>
+</div>
+

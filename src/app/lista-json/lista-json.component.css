@@ -1,0 +1,56 @@
+@import '../app.component.css';
+
+.response-panel {
+  background-color: #f0f5f9;
+}
+
+ul {
+  list-style-type: none;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+li {
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  border-bottom: 3px solid #ddd;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: #beeeee;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+button {
+  background-color: #3498db;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  ul {
+    padding: 0;
+    margin: 10px auto;
+  }
+
+  li {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+}

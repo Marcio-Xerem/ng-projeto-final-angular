@@ -1,0 +1,25 @@
+<div class="container">
+  <!-- Formulário para buscar detalhes do cachorro -->
+  <form (submit)="buscarDadosDog()">
+    <h2>Buscar detalhes do Cachorro...</h2>
+    <input type="text" name="txtDogId" id="txtDogId" [(ngModel)]="dogId" placeholder="Digite o nome ou ID da raça"
+      required />
+    <button type="submit">Buscar</button>
+  </form>
+
+  <!-- Painel de Resposta -->
+  <div class="response-panel" *ngIf="dogDetails">
+    <h3>Detalhes do Cachorro:</h3>
+    <p><strong>Nome:</strong> {{ dogDetails.name }}</p>
+    <p><strong>Temperamento:</strong> {{ dogDetails.temperament }}</p>
+    <p *ngIf="dogDetails.weight"><strong>Peso:</strong> {{ dogDetails.weight.metric }}</p>
+    <p *ngIf="!dogDetails.weight"><strong>Peso:</strong> Não disponível</p>
+    <p><strong>Origem:</strong> {{ dogDetails.origin || 'Não disponível' }}</p>
+
+    <!-- Usando figure para exibir a imagem -->
+    <figure *ngIf="dogDetails.image?.url">
+      <img [src]="dogDetails.image?.url" alt="{{ dogDetails.name }}" />
+      <figcaption *ngIf="dogDetails.name">Foto de um {{ dogDetails.name }}</figcaption>
+    </figure>
+  </div>
+</div>
